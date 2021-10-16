@@ -1,0 +1,684 @@
+// Импорт (Файл обнуляющих стилей)
+@import "nullstyle.scss";
+
+%NunitoSans16p {
+	//@extend %NunitoSans16p;
+	font-family: "Nunito Sans", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	//letter-spacing: 1px;
+	color: #4b4b4b;
+}
+
+%monsh2 {
+	//@extend %monsh2;
+	font-family: "Montserrat", sans-serif;
+	font-size: 25px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #1e1c1d;
+}
+%titleblock {
+	//@extend %titleblock;
+	h2 {
+		@extend %monsh2;
+		color: #fdfdfd;
+		font-weight: 600;
+		margin: 10px 10px;
+	}
+	p {
+		@extend %NunitoSans16p;
+		color: #ffffff;
+		line-height: 10px;
+		margin: 10px 10px;
+	}
+}
+
+/*------------------------------------------ 
+.container {
+	max-width: 1180px;
+	margin: 0px auto;
+}
+
+.allcontent {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+	}
+------------------------------------------*/
+
+.title {
+	@extend %titleblock;
+}
+
+.container {
+	max-width: 1500px;
+	margin: 0px auto;
+	padding: 0 15px;
+}
+
+.containermax {
+	max-width: 1920px;
+	margin: 0px auto;
+	padding: 0 15px;
+}
+
+.allcontent {
+	min-height: 100%;
+	overflow: hidden;
+	//display: flex;
+	//flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.body {
+	font-family: "Nunito Sans", sans-serif;
+}
+
+/*------------------------------------------ Header Section Start ----------------------------------------------------*/
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+
+.header:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f5f6f7;
+	z-index: 2;
+}
+
+.header__body {
+	position: relative;
+	display: flex;
+
+	//display: inline-flex;
+
+	justify-content: space-between;
+	height: 50px;
+	align-items: center;
+}
+
+.header__burger {
+	display: none;
+}
+
+.header__list {
+	display: flex;
+	position: relative;
+
+	z-index: 2;
+}
+
+.header__list li {
+	list-style: none;
+	margin: 10px 0px 0px 30px;
+}
+
+@media (max-width: 767px) {
+	.header__body {
+		height: 40px;
+	}
+
+	.header__logo {
+		flex: 0 0 40px;
+	}
+
+	.header__burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+	}
+
+	.header__burger span {
+		position: absolute;
+		background-color: rgb(44, 44, 44);
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		transition: all 0.3s ease 0s;
+	}
+
+	.header__burger:before,
+	.header__burger:after {
+		content: "";
+		background-color: rgb(44, 44, 44);
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.3s ease 0s;
+	}
+
+	.header__burger:before {
+		top: 0;
+	}
+	.header__burger:after {
+		bottom: 0;
+	}
+
+	.header__burger.active span {
+		transform: scale(0);
+		top: 9px;
+	}
+
+	.header__burger.active:before {
+		transform: rotate(45deg);
+		top: 9px;
+	}
+
+	.header__burger.active:after {
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+
+	.header__menu {
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		transition: all 0.3s ease 0s;
+
+		background-color: rgba(192, 233, 238, 0.815);
+		padding: 70px 10px 20px 10px;
+	}
+
+	.header__menu.active {
+		top: 0;
+	}
+
+	.header__list {
+		display: block;
+	}
+	.header__list li {
+		margin: 0px 0px 30px 0px;
+	}
+}
+
+.header__logo img {
+	max-width: 100%;
+}
+
+.header__logo {
+	flex: 0 0 60px;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+}
+
+.header__link {
+	@extend %monsh2;
+	font-size: 15px;
+	color: #0c0c0cb0;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+/*------------------------------------------ Header Section End ----------------------------------------------------*/
+
+/*------------------------------------------ bodyheader Section Start ----------------------------------------------------*/
+.head__cover {
+	padding-top: 40em;
+	position: relative;
+	background-image: url("../img/head_cover2.jpg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+}
+
+.head__cover img {
+	height: 100%;
+	width: 1920px;
+	margin: 0px auto;
+	padding: 0 15px;
+}
+.description {
+	position: absolute;
+	top: 40%;
+	margin: auto;
+	padding: 2em;
+	max-height: 100%;
+}
+
+.description h1 {
+	color: #c7e3ee;
+}
+.description p {
+	color: rgb(245, 247, 248);
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.description button {
+	background: #c2dce0;
+	color: rgb(3, 13, 22);
+}
+
+/*------------------------------------------ bodyheader Section End ----------------------------------------------------*/
+
+/*------------------------------------------ About Section Start ----------------------------------------------------*/
+.aboutt {
+	background-color: #f5f6f7;
+}
+
+.body__cover {
+	padding-top: 8em;
+	background-image: url("../img/body_cover2.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.desc {
+	padding-top: 3em;
+	border-left: 4px solid #10828c;
+	h3 {
+		color: #10828c;
+	}
+	p {
+		line-height: 2;
+		color: #888;
+	}
+}
+
+.about img {
+	height: 100%;
+	width: 100%;
+}
+.about .city {
+	padding: 2em;
+	margin: 1em 0;
+}
+
+.desc button {
+	border: 1px solid #c2dce0;
+	background: #c2dce0;
+	color: rgb(3, 13, 22);
+}
+
+/*------------------------------------------ About Section End ----------------------------------------------------*/
+
+/*------------------------------------------ Rooms Section Start ----------------------------------------------------*/
+.rooms {
+	background-color: #f5f6f7;
+
+}
+
+.rooms__body {
+	position: relative;
+}
+
+.rooms__title {
+	padding: 6em 0 6em 4em;
+
+	@media (max-width: 992px) {
+		padding: 2em 0 2em 2em;
+	}
+}
+
+.rooms__title h2 {
+	color: #0c0c0c;
+	font-size: 40px;
+	@media (max-width: 992px) {
+		font-size: 20px;
+	}
+}
+
+.rooms__title p {
+	color: #0c0c0c;
+	padding-top: 1em;
+	font-size: 30px;
+	@media (max-width: 992px) {
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+.rooms img {
+	margin: 1em 0;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.deluxe__text {
+	position: absolute;
+	top: 80%;
+	left: 1em;
+}
+
+.room__deluxe img {
+	height: 95%;
+	width: 100%;
+}
+
+.premium__text,
+.special__text,
+.twin__text,
+.single__text {
+	position: absolute;
+	top: 60%;
+	left: 1em;
+}
+
+.room__premium,
+.room__special,
+.room__twin,
+.room__single,
+.room__deluxe {
+	position: relative;
+	min-height: 15em;
+}
+/*------------------------------------------ Rooms Section End ----------------------------------------------------*/
+
+/*------------------------------------------ Offers Section Start ----------------------------------------------------*/
+
+.offers {
+	background-color: #f5f6f7;
+}
+
+.offers__title {
+	padding: 6em 0 6em 4em;
+
+	@media (max-width: 992px) {
+		padding: 2em 0 2em 2em;
+	}
+}
+
+.offers__title h2 {
+	color: #0c0c0c;
+	font-size: 40px;
+	@media (max-width: 992px) {
+		font-size: 20px;
+	}
+}
+
+.offers__title p {
+	color: #0c0c0c;
+	padding-top: 1em;
+	font-size: 30px;
+	@media (max-width: 992px) {
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+.individual__body,
+.tours__body,
+.flights__body {
+	height: 100%;
+	width: 100%;
+	min-height: 40em;
+	padding-top: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	@media (max-width: 992px) {
+		min-height: 42em;
+	}
+}
+
+.individual__title,
+.tours__title,
+.flights__title {
+	text-align: center;
+	height: 10%;
+	width: 100%;
+}
+
+.individual__text p,
+.tours__text p,
+.flights__text p {
+	text-align: center;
+	margin-top: 3em;
+	color: #353434ad;
+	line-height: 30px;
+
+	@extend %NunitoSans16p;
+
+	@media (max-width: 992px) {
+		padding-top: 2em;
+		font-size: 20px;
+	}
+}
+
+.p-3 {
+	box-shadow: 1px 1px 10px rgba(1, 14, 14, 0.253);
+}
+
+.individual {
+	background-color: white;
+	background-image: url("../img/individual.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.tours {
+	background-color: white;
+	background-image: url("../img/tour.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.flights {
+	background-color: white;
+	background-image: url("../img/flights.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.individual__button,
+.tours__button,
+.flights__button {
+	display: flex;
+	justify-content: center;
+}
+.offers__body {
+	padding: 1em;
+}
+
+.offers__body button {
+	background: #c2dce0;
+	border: 1px solid #c2dce0;
+
+	color: rgb(3, 13, 22);
+}
+/*------------------------------------------ Offers Section End ----------------------------------------------------*/
+
+/*------------------------------------------ Experiences Section Start ----------------------------------------------------*/
+
+.foot__cover {
+	background-image: url("../img/footer_cover.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #f5f6f7;
+}
+
+.experiences {
+	background-color: #f5f6f7;
+}
+
+.experiences__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.experiences__body {
+	justify-content: space-between;
+}
+
+.experiences__title {
+	padding: 6em 4em 6em 4em;
+
+	@media (max-width: 992px) {
+		padding: 2em 0 2em 2em;
+	}
+}
+
+.experiences__title h2 {
+	color: #0c0c0c;
+	font-size: 40px;
+	@media (max-width: 992px) {
+		font-size: 20px;
+	}
+}
+
+.experiences__title p {
+	color: #0c0c0c;
+	padding-top: 1em;
+	font-size: 30px;
+	line-height: 20px;
+	@media (max-width: 992px) {
+		font-size: 15px;
+	}
+}
+
+.feedback1__textbody,
+.feedback2__textbody {
+	background-color: white;
+	padding-top: 2em;
+	margin-top: -4em;
+}
+
+.feedback1__body,
+.feedback2__body {
+	height: 100%;
+}
+
+.travellerphoto1,
+.travellerphoto2 {
+	padding-left: 2em;
+}
+
+.feedback1__text,
+.feedback2__text {
+	@extend %NunitoSans16p;
+	color: #818181;
+	line-height: 20px;
+	padding: 2em 0 0 5em;
+}
+
+.feedback1__traveller,
+.feedback2__traveller {
+	@extend %NunitoSans16p;
+	color: #2b2a2a;
+	line-height: 20px;
+	padding: 0 0 1em 5em;
+	font-size: 15px;
+}
+/*------------------------------------------ Experiences Section End ----------------------------------------------------*/
+
+/*------------------------------------------ Subscribe Section Start ----------------------------------------------------*/
+
+.subscribe__title {
+	padding: 6em 4em 6em 4em;
+	@media (max-width: 992px) {
+		padding: 2em 0 2em 2em;
+	}
+}
+
+.subscribe__title h2 {
+	font-size: 50px;
+	@media (max-width: 992px) {
+		font-size: 20px;
+	}
+}
+
+.subscribe__body {
+	text-align: center;
+}
+
+.subscribe__form {
+	padding-bottom: 10em;
+	@media (max-width: 767px) {
+		padding-bottom: 5em;
+	}
+}
+
+.subscribe__form_mail {
+	width: 30em;
+	height: 3em;
+	padding-left: 20px;
+	@media (max-width: 767px) {
+		width: 15em;
+	}
+}
+
+.mb-3 button {
+	border: 1px solid #c2dce0;
+	background: #c2dce0;
+	color: rgb(3, 13, 22);
+}
+/*------------------------------------------ Subscribe Section End ----------------------------------------------------*/
+
+/*------------------------------------------ Footer Section Start ----------------------------------------------------*/
+
+.footer__items {
+	display: flex;
+}
+.footer__items a {
+	@extend %monsh2;
+	font-size: 15px;
+	color: #0c0c0cb0;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.footer__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__items {
+	padding-top: 1em;
+	@media (max-width: 992px) {
+		display: none;
+	}
+}
+
+.footer__logo img {
+	max-height: 70px;
+	margin-bottom: 2em;
+}
+
+.footer__socials img {
+	height: 60%;
+	margin-left: 30px;
+	max-height: 30px;
+
+	@media (max-width: 992px) {
+		height: 40%;
+		margin-left: 10px;
+	}
+}
+/*------------------------------------------ Footer Section End ----------------------------------------------------*/
